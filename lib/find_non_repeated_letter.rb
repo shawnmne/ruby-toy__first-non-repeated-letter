@@ -9,6 +9,21 @@
 
 
 def find_first_non_repeated_letter(str)
-  #write your method here
-  return true
+  flag = 0          #flag used to test for same character
+  i = 0             #counter
+  a = str.length    #length of string for loop
+ while i < a  do    
+
+    if str[i] == str[i + 1] #compares character and next character
+      flag = 1              #if match set flag
+    elsif flag == 0         #check to see if flag has been set 
+      return str[i]         #if flag not set return character
+    else
+      if i == str.length - 1    #check to see if reached end of string
+          return nil            #return nil
+      end
+     flag = 0               #no match at this point set flag to 0
+    end
+    i += 1                  #advance counter
+  end
 end
